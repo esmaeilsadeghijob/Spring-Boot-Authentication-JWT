@@ -1,0 +1,19 @@
+#server:
+#  port: 9090
+
+spring:
+  datasource:
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/cando
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+javatar:
+  app:
+    jwtCookieName: javatar
+    jwtSecret: ======================javatar=Spring===========================
+    jwtExpirationMs: 86400000
