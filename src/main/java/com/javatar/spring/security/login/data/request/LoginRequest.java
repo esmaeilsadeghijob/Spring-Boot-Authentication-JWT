@@ -1,4 +1,4 @@
-package com.javatar.spring.security.login.payload.request;
+package com.javatar.spring.security.login.data.request;
 
 import jakarta.validation.constraints.NotBlank;
 

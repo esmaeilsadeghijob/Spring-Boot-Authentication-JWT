@@ -1,38 +1,30 @@
 package com.javatar.spring.security.login.controllers;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-
+import com.javatar.spring.security.login.models.ERole;
+import com.javatar.spring.security.login.models.Role;
 import com.javatar.spring.security.login.models.User;
-import com.javatar.spring.security.login.payload.response.JwtResponse;
+import com.javatar.spring.security.login.data.request.LoginRequest;
+import com.javatar.spring.security.login.data.request.SignupRequest;
+import com.javatar.spring.security.login.data.response.JwtResponse;
+import com.javatar.spring.security.login.data.response.MessageResponse;
+import com.javatar.spring.security.login.repository.RoleRepository;
+import com.javatar.spring.security.login.repository.UserRepository;
+import com.javatar.spring.security.login.security.jwt.JwtUtils;
+import com.javatar.spring.security.login.security.services.UserDetailsImpl;
 import jakarta.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.javatar.spring.security.login.models.ERole;
-import com.javatar.spring.security.login.models.Role;
-import com.javatar.spring.security.login.payload.request.LoginRequest;
-import com.javatar.spring.security.login.payload.request.SignupRequest;
-import com.javatar.spring.security.login.payload.response.MessageResponse;
-import com.javatar.spring.security.login.repository.RoleRepository;
-import com.javatar.spring.security.login.repository.UserRepository;
-import com.javatar.spring.security.login.security.jwt.JwtUtils;
-import com.javatar.spring.security.login.security.services.UserDetailsImpl;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController

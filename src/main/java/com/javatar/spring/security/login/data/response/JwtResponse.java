@@ -1,4 +1,4 @@
-package com.javatar.spring.security.login.payload.response;
+package com.javatar.spring.security.login.data.response;
 
 import java.util.List;
 
